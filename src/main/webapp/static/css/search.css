@@ -1,0 +1,34 @@
+/* --- search --- */
+#search{max-width:717px;margin:100px auto 14px}
+#search form{position:relative}
+#search-text{padding:9pt;width:100%;height:50px;font-size:1pc;border:0;border-radius:3px;background-color:#fff}
+#search button{position:absolute;top:0;right:0;background:#313437;border:0;width:60px;height:36px;margin:7px 9pt 0;line-height:36px;border-radius:3px}
+#search button:hover{background:#000;cursor:pointer}
+#search button i{color:#fff;font-size:18px}
+.search-group{display:none;padding-left:75px}
+.s-current .search-type{padding-left:0;display:block}
+.s-current{display:block}
+#search-list{position:relative}
+.s-type{position:absolute;top:0;left:0;z-index:13;width:75px}
+.s-type:hover{height:auto}
+.s-type>span{display:block;height:31px;width:75px}
+.s-type-list{display:none;position:absolute;top:31px;padding:9pt 0;width:70px;background:#fff;border-radius:5px;box-shadow:0 9px 20px rgba(0,0,0,.16)}
+.s-type-list:before{position:absolute;top:-1pc;left:20px;content:'';display:block;width:0;height:0;border:10px solid transparent;border-bottom-color:#fff}
+.s-type-list label{display:block;font-size:15px;text-align:center;font-weight:normal;margin-bottom:0;padding:2px 0;cursor:pointer;transition:.3s}
+.s-type-list label:hover{background:rgba(136,136,136,0.1)}
+.s-type-list .tile-lg{color:#fff;width:3pc;height:3pc;font-size:1.25rem;line-height:3rem;border-radius:.3rem;display:block;margin:auto}
+.s-type:hover .s-type-list{display:block}
+.type-text{position:absolute;left:0;width:75px;padding-left:9pt;font-size:1pc;line-height:31px}
+.type-text:after{content:"\f105";font-family:FontAwesome;margin:0 0 0 15px}
+.search-type{white-space:nowrap;margin:0}.search-type label{margin:0}
+.search-type li{display:inline-block}
+.search-type li label{display:inline-block;padding:0 11px;font-size:14px;line-height:31px;border-radius:3px 3px 0 0;cursor:pointer}
+.search-type input:checked+label,.search-type input:hover+label{background-color:#fff}
+.set-check{margin-top:3px;font-size:9pt}.set-check label{margin-left:3px}
+.set-check input,.set-check label{opacity:0;transition:all .3s ease}
+.search-type li{list-style:none;display:inline-block}
+@media screen and (max-width:767px){#search{margin:25px auto 15px}
+.s-type-list label{padding:5px 0}
+.search-type{overflow:scroll}
+.search-list{height:30px;overflow-y:hidden;overflow-x:scroll;white-space:nowrap}
+}
