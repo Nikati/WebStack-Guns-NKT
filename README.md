@@ -61,11 +61,11 @@ $ java -jar Webstack-Guns-nkt-1.0.jar
 
 在线demo: https://zywhs.club/
 
-![主页](G:/Java/eclipse-/JDK8/Webstack-Guns-nkt/screen/2.png)
+![主页](/screen/2.png)
 
-![分类](G:/Java/eclipse-/JDK8/Webstack-Guns-nkt/screen/3.png)
+![分类](/screen/3.png)
 
-![网站](G:/Java/eclipse-/JDK8/Webstack-Guns-nkt/screen/4.png)
+![网站](/screen/4.png)
 
 
 
