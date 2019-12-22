@@ -3,7 +3,7 @@
 
 一个开源的网址导航网站项目，具备完整的前后台，您可以拿来制作自己的网址导航。文件上传集成七牛云接口，前端已作优化。
 
-![首页](G:/Java/eclipse-/JDK8/Webstack-Guns-nkt/screen/1.png)
+![首页](/screen/1.png)
 
 ## 运行
 
