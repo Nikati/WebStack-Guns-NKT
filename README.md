@@ -1,4 +1,4 @@
-# WebStack-XML-Guns
+# WebStack-Guns-NKT
  ❤️ 一个开源的网址导航网站项目，后台springboot 在线DEMO https://zywhs.club/
 
 一个开源的网址导航网站项目，具备完整的前后台，您可以拿来制作自己的网址导航。文件上传集成七牛云接口，前端懒加载。
