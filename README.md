@@ -74,3 +74,5 @@ $ java -jar Webstack-Guns-nkt-1.0.jar
 
 前端设计：[**WebStackPage**](https://github.com/WebStackPage/WebStackPage.github.io)
 
+后端参考：[**[jsnjfz]**](https://github.com/jsnjfz/WebStack-Guns)
+
