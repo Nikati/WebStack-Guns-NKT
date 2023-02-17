@@ -50,6 +50,15 @@ $ java -jar Webstack-Guns-nkt-1.0.jar
 
 启动完成：http://127.0.0.1:8000
 
+## docker 方式部署
+```bash
+docker pull codecly/webstack-guns-nkt-docker
+docker run -itd -e DB_DATABASE=webstack -e DB_HOST=192.168.211.28  --name webstack -p 8000:8000 codecly/webstack-guns-nkt-docker
+```
+
+数据库连接及上传位置可以在 docker run -e 指定环境变量的方式，也可以使用 -v /path/to/application.yml:/root/webstack/application.yml 的方式映射配置文件
+
+
 
 
 ## 使用
