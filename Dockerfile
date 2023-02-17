@@ -20,11 +20,11 @@ ENV DB_PASSWORD=root
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN mkdir -p /root/webstack/file
+RUN mkdir -p /root/webstack/file && mkdir -p /root/webstack/config
 
 # 将jar包额配置文件添加到容器中
 ADD target/Webstack-Guns-nkt-1.0.jar /root/webstack/webstack-guns-nkt.jar
-ADD src/main/resources/application-example.yml /root/webstack/application.yml
+ADD src/main/resources/application-example.yml /root/webstack/config/application.yml
 ADD src/main/webapp/static/tmp/* /root/webstack/file/
 
 # 工作目录
