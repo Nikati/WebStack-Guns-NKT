@@ -1,7 +1,6 @@
 package com.nikati.manage.modular.system.controller;
 
 import cn.stylefeng.roses.core.base.controller.BaseController;
-import cn.stylefeng.roses.core.base.warpper.BaseControllerWrapper;
 import cn.stylefeng.roses.core.util.ToolUtil;
 import cn.stylefeng.roses.kernel.model.exception.ServiceException;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -14,7 +13,6 @@ import com.nikati.manage.modular.system.model.Category;
 import com.nikati.manage.modular.system.model.Site;
 import com.nikati.manage.modular.system.service.impl.CategoryServiceImpl;
 import com.nikati.manage.modular.system.service.impl.SiteServiceImpl;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,9 +56,10 @@ public class SiteController extends BaseController {
      */
     @RequestMapping(value = "/list")
     @ResponseBody
-    public Object list(@RequestParam(required = false) String title) {
+    public Object list(@RequestParam(required = false) String title, @RequestParam(required = false) Integer categoryId) {
         Map map = new HashMap();
         map.put("title",title);
+        map.put("categoryId", categoryId);
         Page<Site> page = new PageFactory<Site>().defaultPage();
         Pager<Site> pages = siteService.getPage(map, page.getOffset(), page.getLimit());
         page.setTotal(pages.getTotal());
@@ -73,6 +72,22 @@ public class SiteController extends BaseController {
      */
     @RequestMapping("/site_add")
     public String siteAdd() {
+        return PREFIX + "site_add.html";
+    }
+
+    /**
+     * 跳转到添加网站,选中类别的情况下，默认在当前类别中添加网站
+     */
+    @RequestMapping("/site_add/{categoryId}")
+    public String siteAddInCategoryId(@PathVariable Integer categoryId, Model model) {
+        if (categoryId != null && categoryId > 0) {
+            // 设置类别信息
+            Category category = categoryService.get(categoryId);
+            Site site = new Site();
+            site.setCategoryId(category.getId());
+            site.setCategoryTitle(category.getTitle());
+            model.addAttribute(site);
+        }
         return PREFIX + "site_add.html";
     }
 

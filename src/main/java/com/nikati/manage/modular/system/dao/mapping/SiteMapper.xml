@@ -15,7 +15,13 @@
         from site s left join category c on s.category_id = c.id
         where 1=1
         <if test="title != null and title != ''">
-            and s.title like CONCAT('%',#{title},'%')
+            and (
+            s.title like CONCAT('%',#{title},'%')
+            or s.description like CONCAT('%',#{title},'%')
+            )
+        </if>
+        <if test="categoryId != null and categoryId != 0">
+            and (s.category_id = #{categoryId} or s.category_id in ( select id from category where parent_id = #{categoryId} ))
         </if>
         <if test="offset != null">LIMIT #{offset},#{size}</if>
     </select>
@@ -25,7 +31,13 @@
         from site
         where 1=1
         <if test="title != null and title != ''">
-            and title like CONCAT('%',#{title},'%')
+            and (
+            title like CONCAT('%',#{title},'%')
+            or description like CONCAT('%',#{title},'%')
+            )
+        </if>
+        <if test="categoryId != null and categoryId != 0">
+            and (category_id = #{categoryId} or category_id in ( select id from category where parent_id = #{categoryId} ))
         </if>
     </select>
 

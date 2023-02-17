@@ -9,19 +9,31 @@
                 <div class="row row-lg">
                     <div class="col-sm-12">
                         <div class="row">
-                            <div class="col-sm-3">
-                                <#NameCon id="title" name="标题" />
+                            <div class="col-lg-2 col-sm-3">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">网站分类</div>
+                                    <div class="panel-body dept-tree">
+                                        <ul id="categoryTree" class="ztree"></ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-3">
-                                <#button name="搜索" icon="fa-search" clickFun="Site.search()"/>
+                            <div class="col-lg-10 col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <#NameCon id="title" name="标题/描述" />
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <#button name="搜索" icon="fa-search" clickFun="Site.search()"/>
+                                    </div>
+                                </div>
+                                <div class="hidden-xs" id="siteTableToolbar" role="group">
+                                    <#button name="添加" icon="fa-plus" clickFun="Site.openAddSite()"/>
+                                    <#button name="修改" icon="fa-edit" clickFun="Site.openSiteDetail()" space="true"/>
+                                    <#button name="删除" icon="fa-remove" clickFun="Site.delete()" space="true"/>
+                                </div>
+                                <#table id="siteTable"/>
                             </div>
                         </div>
-                        <div class="hidden-xs" id="siteTableToolbar" role="group">
-                            <#button name="添加" icon="fa-plus" clickFun="Site.openAddSite()"/>
-                            <#button name="修改" icon="fa-edit" clickFun="Site.openSiteDetail()" space="true"/>
-                            <#button name="删除" icon="fa-remove" clickFun="Site.delete()" space="true"/>
-                        </div>
-                        <#table id="siteTable"/>
                     </div>
                 </div>
             </div>

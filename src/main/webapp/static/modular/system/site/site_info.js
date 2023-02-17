@@ -57,7 +57,7 @@ SiteDlg.clearData = function() {
  * @param val 数据的具体值
  */
 SiteDlg.set = function(key, val) {
-    this.siteData[key] = (typeof value == "undefined") ? $("#" + key).val() : value;
+    this.siteData[key] = (typeof val == "undefined") ? $("#" + key).val() : val;
     return this;
 }
 
