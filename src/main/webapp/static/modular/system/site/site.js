@@ -5,7 +5,8 @@ var Site = {
     id: "siteTable",	//表格id
     seItem: null,		//选中的条目
     table: null,
-    layerIndex: -1
+    layerIndex: -1,
+    categoryId: 0
 };
 
 /**
@@ -56,7 +57,7 @@ Site.openAddSite = function () {
         area: ['800px', '420px'], //宽高
         fix: false, //不固定
         maxmin: true,
-        content: Feng.ctxPath + '/site/site_add'
+        content: Feng.ctxPath + '/site/site_add/' + Site.categoryId
     });
     this.layerIndex = index;
     layer.full(index);
@@ -107,10 +108,16 @@ Site.delete = function () {
 Site.search = function () {
     var queryData = {};
 
+    queryData['categoryId'] = Site.categoryId;
     queryData['title'] = $("#title").val();
 
     Site.table.refresh({query: queryData});
 }
+
+Site.onClickDept = function (e, treeId, treeNode) {
+    Site.categoryId = treeNode.id;
+    Site.search();
+};
 
 $(function () {
     var defaultColunms = Site.initColumn();
@@ -118,4 +125,7 @@ $(function () {
     table.setPaginationType("server");
     table.init();
     Site.table = table;
+    var ztree = new $ZTree("categoryTree", "/site/tree");
+    ztree.bindOnClick(Site.onClickDept);
+    ztree.init();
 });
