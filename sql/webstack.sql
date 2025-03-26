@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `site` (
   `title` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `thumb` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
